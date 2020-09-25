@@ -6,4 +6,9 @@
 10-11am: continued work on layout and brainstormed more properties and project stretch goals.
 
 11-12: reimagine app, research, add more specs, add more goals, found more articles to research, discussed project with peers.
-1-2: watched a youtube video on cloud firestore data modeling.
+1-2: watched a youtube video on cloud firestore data modeling. 
+  https://www.youtube.com/watch?v=lW7DWV2jST0
+2-3: Continued tutorials and article research
+  https://medium.com/@marinithiago/guys-rest-apis-are-not-databases-60db4e1120e4#:~:text=The%20purpose%20of%20databases%20is,components%20interact%20with%20each%20other
+  https://firebase.google.com/docs/firestore/manage-data/transactions
+  https://cloud.google.com/firestore/docs/query-data/queries#node.js

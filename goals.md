@@ -40,7 +40,5 @@ receiver properties:
 
 more articles to read:
 https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-3.1&tabs=visual-studio
-https://medium.com/@marinithiago/guys-rest-apis-are-not-databases-60db4e1120e4#:~:text=The%20purpose%20of%20databases%20is,components%20interact%20with%20each%20other.
-https://firebase.google.com/docs/firestore/manage-data/transactions
-https://cloud.google.com/firestore/docs/query-data/queries#node.js
-https://www.youtube.com/watch?v=lW7DWV2jST0
+
+
