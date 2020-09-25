@@ -7,3 +7,14 @@ stretch:
 -Ability to upload user images
 -Map API
 -Search functionality of Gifters posts
+-add payment methods
+-add shopping element/amazon api
+
+Shoe properties:
+-size
+-date added
+-condition
+-type
+-foot type
+-brand
+-uses
