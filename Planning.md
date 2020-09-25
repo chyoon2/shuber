@@ -4,3 +4,5 @@
 
 9-10am: worked on the diagram/layout
 10-11am: continued work on layout and brainstormed more properties and project stretch goals.
+
+11-12: reimagine app, research, add more specs, add more goals, found more articles to research, discussed project with peers.
