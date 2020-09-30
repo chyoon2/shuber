@@ -12,3 +12,5 @@
   https://medium.com/@marinithiago/guys-rest-apis-are-not-databases-60db4e1120e4#:~:text=The%20purpose%20of%20databases%20is,components%20interact%20with%20each%20other
   https://firebase.google.com/docs/firestore/manage-data/transactions
   https://cloud.google.com/firestore/docs/query-data/queries#node.js
+3-4: logo creation.
+1hr: Continued working on readme
