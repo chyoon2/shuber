@@ -13,4 +13,5 @@
   https://firebase.google.com/docs/firestore/manage-data/transactions
   https://cloud.google.com/firestore/docs/query-data/queries#node.js
 3-4: logo creation.
-1hr: Continued working on readme
+
+1hr: Continued working on readme & capstone
