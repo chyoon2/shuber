@@ -1,4 +1,4 @@
-![Image of Shoe](logocropped.png)
+![Image of Shoe](./images/logocropped.png)
 # <h1 align = "center"> `SHUBER`
 </h1>
 <h4 align="center"> It's like uber but for shoes! <br><em>To be clear, in this analogy the shoes are the passengers, you are the destination, and the drivers are the ones selling you shoes.</em></h4>
@@ -13,8 +13,8 @@
   <a href="#you-may-also-like">Related</a> •
   <a href="#license">License</a>
 </p>
-<br>
 
+<br>
 
 ## 👟 `Key Features`
 
@@ -25,7 +25,7 @@
 - User can Edit or Delete shoes
 - Recipients can select and add shoes to their cart
 
-## 👢`Features coming soon`
+## 👢 `Features coming soon`
 - Mobile Responsive Site (React Native)
 - Google Maps API
 - Map shows users real time location
@@ -33,9 +33,9 @@
 - Add shopping element/amazon api
 - Application differentiates between gifters
 
-## `Wireframe Mockup`
+## 🥾 `Wireframe Mockup`
 
-![component mockup](newdiagram.png)
+![component mockup](./images/newdiagram.png)
 
 ## 👡 `How To Use`
 
@@ -55,7 +55,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [NPM]
 
 Shuber is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, we'd like you send us an email at <chy.yoon@gmail.com> about anything you'd want to say about this software. We'd really appreciate it!
 
-## 🏄`Credits`
+## 🏄 `Credits`
 
 This software uses the following technologies:
 
@@ -90,7 +90,9 @@ ___
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 <br><br>
+
 ---
+
 ## Christopher Yoon
 > LinkedIn [ChristopherYoon](https://www.https://www.linkedin.com/in/chrisyoonseattle/) &nbsp;&middot;&nbsp;
 > GitHub [ChristopherYoon](https://github.com/chyoon2) &nbsp;&middot;&nbsp;

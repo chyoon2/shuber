@@ -40,5 +40,18 @@ receiver properties:
 
 more articles to read:
 https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react?view=aspnetcore-3.1&tabs=visual-studio
-
+const SignUp = () => (
+  <Container>
+  <Form>
+    <Form.Group>
+      <Form.Control type="text" name="email" placeholder="Email" />
+    </Form.Group>
+    <Form.Group>
+      <Form.Control type="password" name="password" placeholder="Password"/>
+    </Form.Group>
+      <Button variant="primary" type="submit">Sign up</Button>
+  </Form>
+  <p>Don't have an account? <em>hilarious</em></p>
+  </Container>
+);
 
