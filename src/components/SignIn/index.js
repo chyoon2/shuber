@@ -1,30 +1,85 @@
-import React from 'react';
 import '../../login.css';
-
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
+import { SignUpLink } from '../SignUp';
+import { withFirebase } from '../Firebase';
+import * as ROUTES from '../../constants/routes';
 import {Button, Form, Container} from "react-bootstrap";
 
-const SignIn = () => (
-  <div class="wrapper fadeInDown">
-  <div id="formContent">
-    <div class="fadeIn first">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAeFBMVEX///8AAAALCwv7+/vj4+Pn5+cWFhaHh4cEBARBQUGhoaEdHR2oqKhiYmLr6+v4+PjR0dFMTEwtLS2SkpIPDw9ubm5dXV3GxsZYWFjx8fEkJCQ4ODh7e3vb29u7u7uzs7MzMzONjY1/f38+Pj5ISEicnJxycnK5ubkklObtAAADmklEQVR4nO2ZaXeqMBCGHUQWgbKJLO6o7f//h5eYBAKERbR4es88X3oAybyZFehigSAIgiAIgiAIgiAIgiB/juP5evqkfU8BgF38MfsrCx4k6mfsuztgKJ9xwpbbh+vyE/b10v6GhEA9zmz/VNoHmxybYHrvW9xSHLf/J48CoDjkmPjDiL7eJIBk965/sSoBYFUcxgYNhj6geySPxbJ+j9oWF1AoTTN+EL5FgEaL6977o3RPdw3+6svn9s232F94GlvuIL18WLO/pd16PWzltz3DIWAdZt/OBDdUyvZ7DOoCWD0YzsvZ6Dq8ye3r23HvNNzMhKsrgv2yHkALX+5Na40vu7vELLdXtrNhJ32eomoirQfIXh6T6Xe1OSM4m2ZQHd/E5l/FoVYP+gu2I7rj1XfpBRHFYbtPdToGlyHzS6sepsYBArZD1042deubxOa9pgiSwhrPV2Q0VNJ6sPbpNAEAW57Hy/ji7LINKJvMdEKv3NPxXAu1t6sLYPUwMRsfW9B7xC/typ7PyuQuxquqBwgmjEkW66ijoai6JdgCg/k5FeIg1gP4EwUU7PLWs453ubbS0rLZNZOfebEexMW1ZH+PV+limaqxnfvSuoDyWYCPqFY9eE+NSbmRXnj3dXOlcYXWg2atf1cAyXd68yGpn+f1AOfxj66TBFQWTplwUqgHSMaOyYkCyu4hjqhaPRgjBVySTG5gkA3rO9WIqtUDkGtacE32tjfQoNI43AZSGwNkP3QBPqLEeqACuFY/HHyjSqvx+wT8TW0tKdlGgG/2YDTS/HkJ3SOqKaBo1NLHhstRmANqu/MN0jWi2gKKxJW0qOK05ucnNhCXDjwPH1GNOEgEgNlOR37pnFMN2+Y9I1D4iLoNCYB9pwASzocPmp4cBWu+qegDqQCtR0DhSxKiQ7PBj4OOqPVrAug0jyYJAOPhQCGLpQLyfgFA3tDUVkGNVEB84FU3P5mEFI1k061520iudf9JBHSUoQhxgQ4TWdfysLV68NM23xKQFKfiqQIe/ivzsL660dWKG2tYJAmmCoBIzENh9b5h1FhCKU65kwXU8pCsTsZxLozjj3xiq/CS1Qetp2tT0ohnonjn84sGq73ry9pou6l6iG3dubLuLn0emJxwz/MtVTmf/UReArPZ9ztKcC77UVcLmMe81v0Zaw7zRtTzAcQavv9FMr23//38ogLFOifh+/6zgCAIgiAIgiAIgiAIgvxn/ANbvy+gODmAwgAAAABJRU5ErkJggg==" id="icon" alt="User Icon" />
-    </div>
-
-    <form>
-   
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" />
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" />
-      <input type="submit" class="fadeIn fourth" value="Log In" />
-
-    </form>
-
-    <div id="formFooter">
-      <p>Forgot Password?</p>
-    </div>
-
-
+const SignInPage = () => (
+  <div>
+    <h1>SignIn</h1>
+    <SignInForm />
+    <SignUpLink />
   </div>
-</div>
 );
+ 
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null,
+};
 
-export default SignIn;
+class SignInFormBase extends Component {
+  constructor(props) {
+    super(props);
+ 
+    this.state = { ...INITIAL_STATE };
+  }
+ 
+  onSubmit = event => {
+    const { email, password } = this.state;
+ 
+    this.props.firebase
+      .doSignInWithEmailAndPassword(email, password)
+      .then(() => {
+        this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.HOME);
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+ 
+    event.preventDefault();
+  };
+ 
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  
+  render() {
+    const { email, password, error } = this.state;
+    const isInvalid = password === '' || email === '';
+ 
+    return (
+      <form onSubmit={this.onSubmit}>
+        <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <div class="fadeIn first">
+            <img src="" id="icon" alt="User Icon" />
+          </div>
+          <form>
+            <input name="email" value={email} onChange={this.onChange}type="text" placeholder="Email Address" />
+            <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" />
+            <button disabled={isInvalid} type="submit">Sign In</button>
+          </form>
+          <div id="formFooter">
+            <p>Forgot Password?</p>
+          </div>
+        </div>
+      </div>
+        {error && <p>{error.message}</p>}
+      </form>
+    );
+  }
+}
+
+const SignInForm = compose(
+  withRouter,
+  withFirebase,
+)(SignInFormBase);
+
+export default SignInPage;
+
+export { SignInForm };
