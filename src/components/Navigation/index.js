@@ -4,7 +4,6 @@ import SignOutButton from '../SignOut';
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 import * as ROUTES from '../../constants/routes';
@@ -52,9 +51,6 @@ const Navigation = () => (
         <SignOutButton />
     </Navbar.Collapse>
   </Navbar>
-    
-        
-      
   </div>
 );
  
