@@ -54,9 +54,9 @@ class SignInFormBase extends Component {
  
     return (
       <form onSubmit={this.onSubmit}>
-        <div class="wrapper fadeInDown">
+        <div className="wrapper fadeInDown">
         <div id="formContent">
-          <div class="fadeIn first">
+          <div className="fadeIn first">
             <img src="" id="icon" alt="User Icon" />
           </div>
           <form>
