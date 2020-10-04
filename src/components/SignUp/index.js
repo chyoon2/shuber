@@ -7,7 +7,7 @@ import '../../login.css';
  
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <br></br>
     <SignUpForm />
   </div>
 );
@@ -19,7 +19,7 @@ const INITIAL_STATE = {
   error: null,
 }
 const SignUpLink = () => (
-  <p>
+  <p align="center">
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
@@ -59,7 +59,7 @@ class SignUpFormBase extends Component {
         <div className="wrapper fadeInDown">
           <div id="formContent">
             <div className="fadeIn first">
-              <img src="" id="icon" alt="User Icon" />
+              <img src= "./logocropped.png" />
             </div>
             <div>
         
@@ -68,7 +68,11 @@ class SignUpFormBase extends Component {
                 <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
                 <input name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password" />
                 <input name="passwordTwo" value={passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" />
+
+                
+                <p></p>
                 <Button disabled={isInvalid} type="submit">Sign Up</Button>
+                <p></p>
                 </div>
             <div id="formFooter">
               <p>Forgot Password?</p>

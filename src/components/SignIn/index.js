@@ -9,8 +9,9 @@ import { Button, Form, Container } from "react-bootstrap";
 
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <br></br>
     <SignInForm />
+    <br></br>
     <SignUpLink />
   </div>
 );
@@ -63,7 +64,9 @@ class SignInFormBase extends Component {
             <div>
               <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
               <input name="password" value={password} onChange={this.onChange} type="password" placeholder="Password" />
+              <p></p>
               <Button disabled={isInvalid} type="submit">Sign In</Button>
+              <p></p>
             </div>
             <div id="formFooter">
               <p>Forgot Password?</p>
@@ -72,7 +75,6 @@ class SignInFormBase extends Component {
         </div>
         {error && <p>{error.message}</p>}
       </Form>
-
     );
   }
 }

@@ -8,26 +8,27 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 import * as ROUTES from '../../constants/routes';
  
-const Navigation = () => (
-  <div>
-    <Navbar
+const Navigation = ({ authUser }) => (
+  <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}
+  </div>
+);    
+
+const NavigationAuth = () => (
+  <Navbar
+      sticky="top"
+      expand="lg"
       style={{
         backgroundColor: "rgba(255, 255, 255, .5)",
         boxShadow: "0 5px 15px rgba(0, 0, 0, .2)",
-      }}
-      sticky="top"
-      expand="lg"
+        }} 
     >
     <Navbar.Brand as={Link} to="/">
-      Memory Lane
+      Shuber
     </Navbar.Brand>
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
+    <Navbar.Collapse id="basic-navbar-nav" >
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to={ROUTES.SIGN_IN}>
-            Sign-in
-          </Nav.Link>
           <Nav.Link as={Link} to={ROUTES.LANDING}>
             Landing
           </Nav.Link>
@@ -51,15 +52,28 @@ const Navigation = () => (
         <SignOutButton />
     </Navbar.Collapse>
   </Navbar>
-  </div>
 );
- 
 
-{/* <Form inline onSubmit={handleSearchQuery}> */}
-//           <Button variant="success" type='submit'>Search</Button>
-//       </Navbar.Collapse>
-//     </Navbar>
-//   </React.Fragment>
-// );
+const NavigationNonAuth = () => (
+  <Navbar
+      sticky="top"
+      expand="lg"
+      style={{
+        backgroundColor: "rgba(255, 255, 255, .5)",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, .2)",
+        }} 
+    >
+    <Navbar.Brand as={Link} to="/">
+      Shuber
+    </Navbar.Brand>
+
+        <Nav.Link as={Link} to={ROUTES.SIGN_IN}>
+            Sign In
+          </Nav.Link>
+          
+        
+    
+  </Navbar>
+);
 
 export default Navigation;
