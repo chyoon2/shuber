@@ -2,7 +2,6 @@ import * as firebase from 'firebase';
 import 'firebase/firestore';
 import app from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/firestore';
 
 
 const config = {
@@ -19,14 +18,16 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
 
-    /* Helper */
+   /* Helper */
  
-    this.fieldValue = app.firestore.FieldValue;
-    this.emailAuthProvider = app.auth.EmailAuthProvider;
+   this.fieldValue = app.firestore.FieldValue;
+   this.emailAuthProvider = app.auth.EmailAuthProvider;
+
 
     /* Firebase APIs */
     this.auth = app.auth();
     this.db = app.firestore();
+
   }
   doCreateUserWithEmailAndPassword = (email, password) =>
   this.auth.createUserWithEmailAndPassword(email, password);
@@ -41,16 +42,13 @@ class Firebase {
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password);
 
-    // *** Merge Auth and DB User API *** //
-
-
     onAuthUserListener = (next, fallback) =>
     this.auth.onAuthStateChanged(authUser => {
       if (authUser) {
         this.user(authUser.uid)
-          .once('value')
+          .get()
           .then(snapshot => {
-            const dbUser = snapshot.val();
+            const dbUser = snapshot.data();
  
             // default empty roles
             if (!dbUser.roles) {
@@ -75,15 +73,15 @@ class Firebase {
  
   // *** User API ***
  
-  user = uid => this.db.ref(`users/${uid}`);
+  user = uid => this.db.doc(`users/${uid}`);
  
-  users = () => this.db.ref('users');
+  users = () => this.db.collection('users');
  
   // *** Message API ***
  
-  message = uid => this.db.ref(`messages/${uid}`);
+  message = uid => this.db.doc(`messages/${uid}`);
  
-  messages = () => this.db.ref('messages');
+  messages = () => this.db.collection('messages');
 }
  
 export default Firebase;
