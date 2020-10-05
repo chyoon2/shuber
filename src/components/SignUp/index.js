@@ -59,12 +59,12 @@ class SignUpFormBase extends Component {
         <div className="wrapper fadeInDown">
           <div id="formContent">
             <div className="fadeIn first">
-              <img src= "./logocropped.png" />
+            <img src={require("./../../images/cropped logo.png")} id="icon" alt="User Icon" />
             </div>
             <div>
         
               
-                <input name="username" value={username} onChange={this.onChange} type="text" placeholder="Full Name" />
+                <input name="username" value={username} onChange={this.onChange} type="text" placeholder="User Name" />
                 <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
                 <input name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password" />
                 <input name="passwordTwo" value={passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" />
@@ -81,7 +81,6 @@ class SignUpFormBase extends Component {
         </div>
         {error && <p>{error.message}</p>}
       </Form>
-        
     );
   }
 }
