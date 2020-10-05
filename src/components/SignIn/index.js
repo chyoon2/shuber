@@ -59,7 +59,7 @@ class SignInFormBase extends Component {
         <div className="wrapper fadeInDown">
           <div id="formContent">
             <div className="fadeIn first">
-  <img src={require("./../../images/cropped logo.png")} id="icon" alt="User Icon" />
+            <img src={require("./../../images/cropped logo.png")} id="icon" alt="User Icon" />
             </div>
             <div>
               <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
