@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import { SignUpLink } from '../SignUp';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-import { Button, Form, Container } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 const SignInPage = () => (
   <div>

@@ -11,9 +11,10 @@ import AdminPage from '../Admin';
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import {Button} from 'react-bootstrap'
 import * as ROUTES from '../../constants/routes';
-import { withFirebase } from '../Firebase';
-import { AuthUserContext } from '../Session';
+// import { withFirebase } from '../Firebase';
+// import { AuthUserContext } from '../Session';
 import { withAuthentication } from '../Session';
+import './../../index.css';
 
 const App = () => (
   <Router>

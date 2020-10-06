@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import { Link, withRouter } from 'react-router-dom';
-import {Button, Form, Container} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import '../../login.css';
  
 const SignUpPage = () => (
@@ -31,7 +31,7 @@ class SignUpFormBase extends Component {
   }
  
   onSubmit = event => {
-    const { username, email, passwordOne, isAdmin } = this.state;
+    const { username, email, passwordOne } = this.state;
     
     
     this.props.firebase
