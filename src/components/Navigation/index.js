@@ -16,7 +16,7 @@ const Navigation = () => (
   <div>
     <AuthUserContext.Consumer>
       {authUser =>
-        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+        authUser ? <NavigationAuth  authUser={authUser}/> : <NavigationNonAuth />
       }
     </AuthUserContext.Consumer>
   </div>
@@ -88,11 +88,11 @@ function NavigationNonAuth () {
 
           </div>
             <Link to={ROUTES.SIGN_IN}>
-            <Button renderas="button">
+            <Button renders="button">
               Login
             </Button>
           </Link>
-         
+          
         </div>
   </IconContext.Provider>
 };
