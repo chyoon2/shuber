@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
-import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { AuthUserContext } from '../Session';
 import './../../nav.css';
@@ -25,7 +24,6 @@ const Navigation = () => (
 
 function NavigationAuth () {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
   return <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
@@ -71,7 +69,6 @@ function NavigationAuth () {
 };
 function NavigationNonAuth () {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
     return <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
@@ -98,6 +95,5 @@ function NavigationNonAuth () {
          
         </div>
   </IconContext.Provider>
-
 };
 export default Navigation;

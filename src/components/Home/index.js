@@ -1,10 +1,11 @@
 import React from 'react';
 import {withAuthorization} from '../Session';
+import './../../landing.css';
 
 const Home = () => (
   <div>
-    <p>the Home page is accessible by every signed in User.</p>
-    <img src={require("./../../images/cropped logo.png")} id="icon" alt="User Icon" />
+    <p>Home</p>
+    <img src={require("./../../images/cropped logo.png")} id="icon" class="center" alt="User Icon" />
   </div>
 );
  

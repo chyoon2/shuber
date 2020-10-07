@@ -9,7 +9,6 @@ import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import {Button} from 'react-bootstrap'
 import * as ROUTES from '../../constants/routes';
 // import { withFirebase } from '../Firebase';
 // import { AuthUserContext } from '../Session';
