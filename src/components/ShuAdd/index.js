@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 // import { useFirestore } from 'react-redux-firebase';
 
 function ShuAdd(props) {
+
+	
 	// const firestore = useFirestore();
 
 	// function addShuToFirestore(event) {

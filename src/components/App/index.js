@@ -11,8 +11,6 @@ import AccountPage from '../Account';
 import AdminPage from '../Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ROUTES from '../../constants/routes';
-// import { withFirebase } from '../Firebase';
-// import { AuthUserContext } from '../Session';
 import { withAuthentication } from '../Session';
 import './../../index.css';
 
