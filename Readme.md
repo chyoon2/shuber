@@ -32,7 +32,7 @@
 - Ability to upload user images
 - Add shopping element/amazon api
 - Application differentiates between gifters
-
+- Shoe API
 ## 🥾 `Wireframe Mockup`
 
 ![component mockup](./images/newdiagram.png)

@@ -8,7 +8,7 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import '../ShuReusableForm/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import * as ROUTES from '../../constants/routes';
 // import { withFirebase } from '../Firebase';
 // import { AuthUserContext } from '../Session';
