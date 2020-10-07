@@ -1,88 +1,77 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
-
 import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+// import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
-import './../../nav.css'
+import './../../nav.css';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
 const Navigation = () => (
-  <div>
-    <AuthUserContext.Consumer>
-      {authUser =>
-        authUser ? <NavigationAuth /> : <NavigationNonAuth />
-      }
-    </AuthUserContext.Consumer>
-  </div>
-);    
+  <React.Fragment>
+  <SideNav
+    onSelect={(selected) => {
+        // Add your code here
+    }}
+>
+    <SideNav.Toggle />
+    <SideNav.Nav defaultSelected="home">
 
-const NavigationAuth = () => (
-  <Navbar
-      sticky="top"
-      expand="lg"
-      style={{
-        backgroundColor: "rgba(255, 255, 255, .5)",
-        }} 
-    >
-    <div class="brand">
-      
-    <Navbar.Brand as={Link} to="/">
-      Shuber
-      <span classname="byline" style={{fontSize:"10px"}}><em>&emsp; &emsp;</em></span>
-    </Navbar.Brand>
-    </div>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
-    <Navbar.Collapse id="basic-navbar-nav" >
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to={ROUTES.LANDING}>
-            Landing
-          </Nav.Link>
-          <Nav.Link as={Link} to={ROUTES.HOME}>
-            Home
-          </Nav.Link>
-          <Nav.Link as={Link} to={ROUTES.ACCOUNT}>
-            Account
-          </Nav.Link>
-          <Nav.Link as={Link} to={ROUTES.ADMIN}>
-            Admin
-          </Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <SignOutButton />
-    </Navbar.Collapse>
-  </Navbar>
-);
+        <NavItem eventKey="home">
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            
+            <NavText>
+                <Link to={ROUTES.LANDING}>Home</Link>
+            </NavText>
+        </NavItem>
 
-const NavigationNonAuth = () => (
-  <Navbar
-      sticky="top"
-      expand="lg"
-      style={{
-        backgroundColor: "rgba(255, 255, 255, .5)",
-        boxShadow: "0 5px 15px rgba(0, 0, 0, .2)",
-        }} 
-    >
-    <Navbar.Brand as={Link} to="/">
-      Shuber
-    </Navbar.Brand>
+        <NavItem>
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            
+            <NavText>
+                <Link to={ROUTES.ACCOUNT}>ACCOUNT</Link>
+            </NavText>
+        </NavItem>
 
-        <Nav.Link as={Link} to={ROUTES.SIGN_IN}>
-            Sign In
-          </Nav.Link>
-          
-        
-    
-  </Navbar>
+        <NavItem>
+            <NavIcon>
+                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            
+            <NavText>
+                <Link to={ROUTES.ACCOUNT}>ACCOUNT</Link>
+            </NavText>
+        </NavItem>
+
+
+        <NavItem eventKey="charts">
+            <NavIcon>
+                <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+            </NavIcon>
+            <NavText>
+            <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+            </NavText>
+            <NavItem eventKey="charts/linechart">
+                <NavText>
+                  sign up
+                </NavText>
+            </NavItem>
+            <NavItem eventKey="charts/barchart">
+                <NavText>
+                    sign up
+                </NavText>
+            </NavItem>
+        </NavItem>
+    </SideNav.Nav>
+</SideNav>
+  </React.Fragment>
 );
 
 export default Navigation;
