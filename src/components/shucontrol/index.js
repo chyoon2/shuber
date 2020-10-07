@@ -1,8 +1,8 @@
 import React from "react";
-import {ShuAdd} from "./ShuAdd";
-import {ShuList} from "./ShuList";
-// import MemoryDetail from "./MemoryDetail";
-// import EditMemoryForm from "./EditMemoryForm";
+import ShuAdd from "../ShuAdd"
+import ShuList from "../ShuList";
+// import ShuDetail from "./ShuDetail";
+// import EditShuForm from "./EditShuForm";
 // import { withFirestore, isLoaded } from "react-redux-firebase";
 import {Button, Container} from "react-bootstrap";
 import PropTypes from "prop-types";
@@ -15,7 +15,7 @@ class ShuControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      selectedMemory: null,
+      selectedShu: null,
       editing: false,
       search: null,
     };
@@ -33,13 +33,13 @@ class ShuControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedShu != null) {
       this.setState({
-        selectedMemory: null,
+        selectedShu: null,
         editing: false,
         search: null,
       });
     } else if (this.state.search != null) {
         this.setState({
-          selectedMemory: null,
+          selectedShu: null,
           editing: false,
           search: null,
         });
@@ -50,28 +50,28 @@ class ShuControl extends React.Component {
     }
   };
 
-  handleAddMemoryToList = () => {
+  handleAddShuToList = () => {
     this.setState({
       formVisibleOnPage: false,
     });
   };
   
-  handleChangingSelectedMemory = (id) => {
+  handleChangingSelectedShu = (id) => {
     this.props.firestore
-      .get({ collection: "memories", doc: id })
-      .then((memory) => {
-        const firestoreMemory = {
-          title: memory.get("title"),
-          date: memory.get("date"),
-          description: memory.get("desciption"),
-          timeOpen: memory.get("timeOpen"),
-          place: memory.get("place"),
-          vibe: memory.get("vibe"),
-          scents: memory.get("scents"),
-          keywords: memory.get("keywords"),
+      .get({ collection: "ShuList", doc: id })
+      .then((shu) => {
+        const firestoreShu = {
+          title: shu.get("title"),
+          date: shu.get("date"),
+          description: shu.get("desciption"),
+          timeOpen: shu.get("timeOpen"),
+          place: shu.get("place"),
+          vibe: shu.get("vibe"),
+          scents: shu.get("scents"),
+          keywords: shu.get("keywords"),
           id: id,
         };
-        this.setState({ search: null, selectedMemory: firestoreMemory });
+        this.setState({ search: null, selectedShu: firestoreShu });
       });
   };
 
@@ -79,16 +79,16 @@ class ShuControl extends React.Component {
     this.setState({ editing: true });
   };
 
-  handleEditingMemoryInList = () => {
+  handleEditingShuInList = () => {
     this.setState({
       editing: false,
-      selectedMemory: null,
+      selectedShu: null,
     });
   };
 
-  handleDeleteMemory = (id) => {
+  handleDeleteShu = (id) => {
     this.props.firestore.delete({ collection: "memories", doc: id });
-    this.setState({ selectedMemory: null });
+    this.setState({ selectedShu: null });
   };
 
   handleSearchQuery = (searchObject) => {
@@ -120,38 +120,39 @@ class ShuControl extends React.Component {
     // if (isLoaded(auth) && auth.currentUser != null) {
       // if (this.state.editing) {
       //   currentlyVisibleState = (
-      //     <EditMemoryForm
-      //       memory={this.state.selectedMemory}
-      //       onEditMemory={this.handleEditingMemoryInList}
+      //     <EditShuForm
+      //       shu={this.state.selectedShu}
+      //       onEditShu={this.handleEditingShuInList}
       //     />
       //   );
-      //   buttonText = "Return to Memory List";
+      //   buttonText = "Return to Shu List";
       // } else if (this.state.search != null) {
       //   currentlyVisibleState = (
       //     <SearchList onSearchQuery={this.state.search}
-      //     onMemorySelection={this.handleChangingSelectedMemory} />
+      //     onShuSelection={this.handleChangingSelectedShu} />
       //   );
-      //   buttonText = "Return to Memory List";
-      // } else if (this.state.selectedMemory != null) {
+      //   buttonText = "Return to Shu List";
+      // } else if (this.state.selectedShu != null) {
       //   currentlyVisibleState = (
-      //     <MemoryDetail
-      //       memory={this.state.selectedMemory}
-      //       onClickingDelete={this.handleDeleteMemory}
+      //     <ShuDetail
+      //       shu={this.state.selectedShu}
+      //       onClickingDelete={this.handleDeleteShu}
       //       onClickingEdit={this.handleEditClick}
       //     />
       //   );
-      //   buttonText = "Return to Memory List";
+      //   buttonText = "Return to Shu List";
       // } else 
       if (this.state.formVisibleOnPage) {
         currentlyVisibleState = (
           <ShuAdd onNewShuCreation={this.handleAddShuToList} />
+          
         );
-        buttonText = "Return to Memory List";
+        buttonText = "Return to Shu List";
       } else {
         currentlyVisibleState = (
-          <ShuList onMemorySelection={this.handleChangingSelectedMemory} />
+          <ShuList onShuSelection={this.handleChangingSelectedShu} />
         );
-        buttonText = "Add Memory";
+        buttonText = "Add Shu";
       }
       return (
         <React.Fragment>
@@ -170,7 +171,7 @@ class ShuControl extends React.Component {
 ShuControl.propTypes = {
   formVisibleOnPage: PropTypes.bool,
   editing: PropTypes.bool,
-  selectedMemory: PropTypes.object,
+  selectedShu: PropTypes.object,
 };
 
-export default withFirestore(ShuControl);
+export default ShuControl;

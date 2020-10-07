@@ -8,8 +8,9 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import AdminPage from '../Admin';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ROUTES from '../../constants/routes';
+import ShuControl from '../ShuControl';
 // import { withFirebase } from '../Firebase';
 // import { AuthUserContext } from '../Session';
 import { withAuthentication } from '../Session';
@@ -19,6 +20,7 @@ const App = () => (
   <Router>
     <div>
       <Navigation/>
+      <ShuControl/>
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
