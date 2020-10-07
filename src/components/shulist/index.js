@@ -5,7 +5,11 @@ import { Shu } from "../Shu";
 function ShuList(props) {
   const test = "shoelist";
   console.log(test);
-  return null;
+  
+  return (
+    
+  <h1>helpo</h1>
+  );
   // const { onSearchQuery } = props;
 
   // if (onSearchQuery == null){
@@ -63,5 +67,7 @@ ShuList.propTypes = {
   onShuSelection: PropTypes.func,
   onSearchQuery: PropTypes.object,
 };
+// const condition = authUser => !!authUser;
 
+// export default withAuthorization(condition)(Home);
 export default ShuList;

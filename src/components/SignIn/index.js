@@ -11,8 +11,7 @@ const SignInPage = () => (
   <div>
     <br></br>
     <SignInForm />
-    <br></br>
-    <SignUpLink />
+    {/* <SignUpLink /> */}
   </div>
 );
 
@@ -70,6 +69,7 @@ class SignInFormBase extends Component {
             </div>
             <div id="formFooter">
               <p>Forgot Password?</p>
+              <SignUpLink />
             </div>
           </div>
         </div>

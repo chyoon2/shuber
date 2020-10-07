@@ -6,12 +6,6 @@ import * as ROUTES from '../../constants/routes';
 
 export const SidebarData = [
   {
-    title: 'Sign In',
-    path: ROUTES.SIGN_IN,
-    icon: <IoIcons.IoIosPaper />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Home',
     path: '/',
     icon: <AiIcons.AiFillHome />,
@@ -27,6 +21,12 @@ export const SidebarData = [
     title: 'Search Shoe',
     path: '/team',
     icon: <IoIcons.IoMdPeople />,
+    cName: 'nav-text'
+  },
+  {
+    title: 'Shoe Things',
+    path: ROUTES.SHU_CONTROL,
+    icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
   },
   {

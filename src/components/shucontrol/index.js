@@ -9,6 +9,8 @@ import PropTypes from "prop-types";
 // import Header from "./Header";
 // import Container from "react-bootstrap/Container";
 // import SearchList from './SearchList';
+import {withAuthorization} from '../Session';
+
 
 class ShuControl extends React.Component {
   constructor(props) {
@@ -30,70 +32,70 @@ class ShuControl extends React.Component {
 //     });
 //   }
 
-  handleClick = () => {
-    if (this.state.selectedShu != null) {
-      this.setState({
-        selectedShu: null,
-        editing: false,
-        search: null,
-      });
-    } else if (this.state.search != null) {
-        this.setState({
-          selectedShu: null,
-          editing: false,
-          search: null,
-        });
-    } else {
-      this.setState((prevState) => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
-    }
-  };
+  // handleClick = () => {
+  //   if (this.state.selectedShu != null) {
+  //     this.setState({
+  //       selectedShu: null,
+  //       editing: false,
+  //       search: null,
+  //     });
+  //   } else if (this.state.search != null) {
+  //       this.setState({
+  //         selectedShu: null,
+  //         editing: false,
+  //         search: null,
+  //       });
+  //   } else {
+  //     this.setState((prevState) => ({
+  //       formVisibleOnPage: !prevState.formVisibleOnPage,
+  //     }));
+  //   }
+  // };
 
-  handleAddShuToList = () => {
-    this.setState({
-      formVisibleOnPage: false,
-    });
-  };
+  // handleAddShuToList = () => {
+  //   this.setState({
+  //     formVisibleOnPage: false,
+  //   });
+  // };
   
-  handleChangingSelectedShu = (id) => {
-    this.props.firestore
-      .get({ collection: "ShuList", doc: id })
-      .then((shu) => {
-        const firestoreShu = {
-          title: shu.get("title"),
-          date: shu.get("date"),
-          description: shu.get("desciption"),
-          timeOpen: shu.get("timeOpen"),
-          place: shu.get("place"),
-          vibe: shu.get("vibe"),
-          scents: shu.get("scents"),
-          keywords: shu.get("keywords"),
-          id: id,
-        };
-        this.setState({ search: null, selectedShu: firestoreShu });
-      });
-  };
+  // handleChangingSelectedShu = (id) => {
+  //   this.props.firestore
+  //     .get({ collection: "ShuList", doc: id })
+  //     .then((shu) => {
+  //       const firestoreShu = {
+  //         title: shu.get("title"),
+  //         date: shu.get("date"),
+  //         description: shu.get("desciption"),
+  //         timeOpen: shu.get("timeOpen"),
+  //         place: shu.get("place"),
+  //         vibe: shu.get("vibe"),
+  //         scents: shu.get("scents"),
+  //         keywords: shu.get("keywords"),
+  //         id: id,
+  //       };
+  //       this.setState({ search: null, selectedShu: firestoreShu });
+  //     });
+  // };
 
-  handleEditClick = () => {
-    this.setState({ editing: true });
-  };
+  // handleEditClick = () => {
+  //   this.setState({ editing: true });
+  // };
 
-  handleEditingShuInList = () => {
-    this.setState({
-      editing: false,
-      selectedShu: null,
-    });
-  };
+  // handleEditingShuInList = () => {
+  //   this.setState({
+  //     editing: false,
+  //     selectedShu: null,
+  //   });
+  // };
 
-  handleDeleteShu = (id) => {
-    this.props.firestore.delete({ collection: "memories", doc: id });
-    this.setState({ selectedShu: null });
-  };
+  // handleDeleteShu = (id) => {
+  //   this.props.firestore.delete({ collection: "memories", doc: id });
+  //   this.setState({ selectedShu: null });
+  // };
 
-  handleSearchQuery = (searchObject) => {
-    this.setState({ search: searchObject})
-  }
+  // handleSearchQuery = (searchObject) => {
+  //   this.setState({ search: searchObject})
+  // }
 
   render() {
     let currentlyVisibleState = null;
@@ -174,4 +176,7 @@ ShuControl.propTypes = {
   selectedShu: PropTypes.object,
 };
 
-export default ShuControl;
+
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(ShuControl);
