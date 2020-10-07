@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Shu } from "../Shu";
 
 function ShuList(props) {
-  const test = "list";
+  const test = "shoelist";
   console.log(test);
   return null;
   // const { onSearchQuery } = props;

@@ -5,7 +5,7 @@ import './../../landing.css';
 const Home = () => (
   <div>
     <p>Home</p>
-    <img src={require("./../../images/cropped logo.png")} id="icon" class="center" alt="User Icon" />
+    <img src={require("./../../images/cropped logo.png")} id="icon" className="center" alt="User Icon" />
   </div>
 );
  

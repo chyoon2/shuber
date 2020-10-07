@@ -31,12 +31,12 @@ function NavigationAuth () {
           <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           
-          <div class="mx-auto order-0">
+          <div className="mx-auto order-0">
             <h1>SHUBER</h1>
           </div>
-          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
+          <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
                   <p>Right</p>
               </li> 
             </ul>
@@ -76,19 +76,19 @@ function NavigationNonAuth () {
           <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           
-          <div class="mx-auto order-0">
+          <div className="mx-auto order-0">
             <h1>SHUBER</h1>
           </div>
-          <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
+          <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
                   <p>Right</p>
               </li> 
             </ul>
 
           </div>
             <Link to={ROUTES.SIGN_IN}>
-            <Button renderAs="button">
+            <Button renderas="button">
               Login
             </Button>
           </Link>
