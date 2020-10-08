@@ -20,13 +20,13 @@
 
 - Login & Logout, Uses Firebase Authorization & Authentication
 ![Image log in auth](./src/images/logocropped.png)
-- User pages displays users data, Tracks User Information (name, member since, location, shoe size, rating, foot width)
-![Image log in auth](./src/images/logocropped.png)
-- Users can add shoes to database (size, date added, condition, type, brand, uses, foot width) 
-![Image log in auth](./src/images/logocropped.png)
-- User can see all posted shoes
-- User can Edit or Delete shoes
-- Recipients can select and add shoes to their cart
+- User pages displays users data, Tracks User Information (name, member since, location, shu size, rating, foot width)
+![Image log in auth](./src/images/logcropped.png)
+- Users can add shu to database (size, date added, condition, type, brand, uses, foot width) 
+![Image log in addshu](./src/images/logcropped.png)
+- User can see all posted shu
+- User can Edit or Delete shu
+- Recipients can select and add shus to their cart
 
 ## 👢 `Features coming soon`
 - Mobile Responsive Site (React Native)
