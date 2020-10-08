@@ -1,4 +1,4 @@
-![Image of Shoe](./images/logocropped.png)
+![Image of Shoe](./src/images/logocropped.png)
 # <h1 align = "center"> `SHUBER`
 </h1>
 <h4 align="center"> It's like uber but for shoes! <br><em>To be clear, in this analogy the shoes are the passengers, you are the destination, and the drivers are the ones selling you shoes.</em></h4>
@@ -18,9 +18,12 @@
 
 ## 👟 `Key Features`
 
-- Tracks User Information (name, member since, location, shoe size, rating, foot width)
-- User pages displays users data
+- Login & Logout, Uses Firebase Authorization & Authentication
+![Image log in auth](./src/images/logocropped.png)
+- User pages displays users data, Tracks User Information (name, member since, location, shoe size, rating, foot width)
+![Image log in auth](./src/images/logocropped.png)
 - Users can add shoes to database (size, date added, condition, type, brand, uses, foot width) 
+![Image log in auth](./src/images/logocropped.png)
 - User can see all posted shoes
 - User can Edit or Delete shoes
 - Recipients can select and add shoes to their cart

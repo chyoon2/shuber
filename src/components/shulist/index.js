@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Shu } from "../Shu";
-
+import './../../shulist.css'
 function ShuList(props) {
   const test = "shoelist";
   console.log(test);
-  
+
   return (
     
-  <h1>helpo</h1>
+<img src={require("./../../images/shoelisty.jpg")} id="icon" className="center" alt="User Icon" />      
+      
   );
   // const { onSearchQuery } = props;
 

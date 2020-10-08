@@ -8,7 +8,7 @@ Name of Project:
 
 Project's Purpose or Goal: 
 
-    Delivery & Rental service for shoes.
+    User to User, Delivery service for shoes.
 
 List the absolute minimum features the project requires to meet this purpose or goal:
 
