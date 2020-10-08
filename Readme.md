@@ -19,7 +19,7 @@
 ## 👟 `Key Features`
 
 - Login & Logout, Uses Firebase Authorization & Authentication
-![Image log in auth](./src/images/logocropped.png)
+![Image log in auth](./src/images/logcropped.png)
 - User pages displays users data, Tracks User Information (name, member since, location, shu size, rating, foot width)
 ![Image log in auth](./src/images/logcropped.png)
 - Users can add shu to database (size, date added, condition, type, brand, uses, foot width) 
