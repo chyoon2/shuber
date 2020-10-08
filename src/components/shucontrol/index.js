@@ -32,31 +32,31 @@ class ShuControl extends React.Component {
 //     });
 //   }
 
-  // handleClick = () => {
-  //   if (this.state.selectedShu != null) {
-  //     this.setState({
-  //       selectedShu: null,
-  //       editing: false,
-  //       search: null,
-  //     });
-  //   } else if (this.state.search != null) {
-  //       this.setState({
-  //         selectedShu: null,
-  //         editing: false,
-  //         search: null,
-  //       });
-  //   } else {
-  //     this.setState((prevState) => ({
-  //       formVisibleOnPage: !prevState.formVisibleOnPage,
-  //     }));
-  //   }
-  // };
+  handleClick = () => {
+    if (this.state.selectedShu != null) {
+      this.setState({
+        selectedShu: null,
+        editing: false,
+        search: null,
+      });
+    } else if (this.state.search != null) {
+        this.setState({
+          selectedShu: null,
+          editing: false,
+          search: null,
+        });
+    } else {
+      this.setState((prevState) => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  };
 
-  // handleAddShuToList = () => {
-  //   this.setState({
-  //     formVisibleOnPage: false,
-  //   });
-  // };
+  handleAddShuToList = () => {
+    this.setState({
+      formVisibleOnPage: false,
+    });
+  };
   
   // handleChangingSelectedShu = (id) => {
   //   this.props.firestore
@@ -159,7 +159,7 @@ class ShuControl extends React.Component {
       return (
         <React.Fragment>
           {/* <Header className="header" onSearchQuery={this.handleSearchQuery} /> */}
-          <Container className="container">
+          <Container>
           {currentlyVisibleState}
           <Button variant="primary" onClick={this.handleClick}>
           {buttonText}</Button>

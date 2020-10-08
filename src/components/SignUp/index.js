@@ -105,7 +105,7 @@ class SignUpFormBase extends Component {
                 <input name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password" />
                 <input name="passwordTwo" value={passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" />
                 <label>
-                  Admin:
+                  Seller:
                   <input
                     name="isAdmin"
                     type="checkbox"
