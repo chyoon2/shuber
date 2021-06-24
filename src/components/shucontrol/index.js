@@ -3,7 +3,6 @@ import ShuAdd from "../ShuAdd"
 import ShuList from "../ShuList";
 // import ShuDetail from "./ShuDetail";
 // import EditShuForm from "./EditShuForm";
-// import { withFirestore, isLoaded } from "react-redux-firebase";
 import {Button, Container} from "react-bootstrap";
 import PropTypes from "prop-types";
 // import Header from "./Header";

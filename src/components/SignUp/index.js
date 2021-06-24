@@ -3,7 +3,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import { Link, withRouter } from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";
-import '../../login.css';
+import '../../styles/login.css';
 import * as ROLES from '../../constants/roles';
 
 const SignUpPage = () => (
@@ -104,15 +104,14 @@ class SignUpFormBase extends Component {
                 <input name="email" value={email} onChange={this.onChange} type="text" placeholder="Email Address" />
                 <input name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password" />
                 <input name="passwordTwo" value={passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password" />
-                <label>
-                  Seller:
+                {/* <label>
                   <input
                     name="isAdmin"
                     type="checkbox"
                     checked={isAdmin}
                     onChange={this.onChangeCheckbox}
                   />
-                </label>
+                </label> */}
                 
                 <p></p>
                 <Button disabled={isInvalid} type="submit">Sign Up</Button>

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Shu } from "../Shu";
-import './../../shulist.css'
+import './../../styles/shulist.css'
 function ShuList(props) {
   const test = "shoelist";
   console.log(test);

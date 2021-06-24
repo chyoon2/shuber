@@ -19,7 +19,6 @@ List the absolute minimum features the project requires to meet this purpose or 
 What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
 
     -React 
-    -Redux
     -NoSql
     -Firestore/Firebase
 

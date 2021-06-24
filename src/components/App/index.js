@@ -12,7 +12,7 @@ import AdminPage from '../Admin';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../Session';
-import './../../index.css';
+import './../../styles/index.css';
 import Messages from '../Messages';
 
 const App = () => (

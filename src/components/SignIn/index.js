@@ -1,4 +1,4 @@
-import '../../login.css';
+import '../../styles/login.css';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -13,9 +13,9 @@ const SignInPage = () => (
     <br></br>
     <SignInForm />
     {/* <SignUpLink /> */}
-    <SignInGoogle />
+    {/* <SignInGoogle />
     <SignInFacebook />
-    <SignInTwitter />
+    <SignInTwitter /> */}
     <PasswordForgetLink />
   </div>
 );
@@ -82,7 +82,7 @@ class SignInFormBase extends Component {
               <p></p>
             </div>
             <div id="formFooter">
-              <p>Forgot Password?</p>
+            <PasswordForgetLink />
               <SignUpLink />
             </div>
           </div>

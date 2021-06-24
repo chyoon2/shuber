@@ -37,7 +37,7 @@
 - Shoe API
 ## 🥾 `Wireframe Mockup`
 
-![component mockup](./images/newdiagram.png)
+![component mockup](./src/images/newdiagram.png)
 
 ## 👡 `How To Use`
 
@@ -62,7 +62,7 @@ Shuber is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if 
 This software uses the following technologies:
 
 - Javascript
-- React Redux (JSX)
+- React
 - Firebase/Firestore
 - HTML (Bootstrap)
 - CSS (Bootstrap)

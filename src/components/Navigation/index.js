@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut';
 import Button from "react-bootstrap/Button";
 import { AuthUserContext } from '../Session';
-import './../../nav.css';
+import './../../styles/nav.css';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import * as FaIcons from "react-icons/fa";
 import { SidebarData } from './sidebardata';
@@ -77,7 +77,6 @@ function NavigationNonAuth () {
           </Link>
           
           <div className="mx-auto order-0">
-            <h1>SHUBER</h1>
           </div>
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul className="navbar-nav ml-auto">

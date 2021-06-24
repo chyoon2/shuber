@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../landing.css';
+import './../../styles/landing.css';
 const Landing = () => (
   <div>
     <img src={require("./../../images/cropped logo.png")} id="icon" className="center" alt="User Icon" />

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // import ReusableForm from '..ShuReusableForm';
-// import { useFirestore } from 'react-redux-firebase';
 import { Button, Form, Container } from "react-bootstrap";
 // import Firebase from './firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';

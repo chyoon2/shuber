@@ -2,8 +2,9 @@
   font-family: 'Uber Move Text';
   font-style: normal;
   font-weight: 400;
-  src: url('./../src/fonts/ub.otf');
+  src: url('../fonts/ub.otf');
 }
+
 .brand {
   font-family: Uber Move Text;
 }
